@@ -11,5 +11,5 @@ In simulation studies it was found to improve upon the classification power and 
 <sub> [1] 	J. Zhang (2002), "Powerful goodness-of-fit tests based on the likelihood ratio", Journal of the Royal Statistical Society, vol. 64, pp. 281 - 294 \
 [2]   J. Einmahl \& I. Mckeague (2003), "Empirical likelihood based hypothesis testing", Bernoulli, vol. 9, pp. 267 - 290 \
 [3] 	A. Scott \& M. Knott (1974), "A cluster analysis method for grouping means in the analysis of variance" , Biometrics, vol. 30, pp. 507 - 512 \
-[4]   K. Haynes, P. Fearnhead, \& I. Eckley (2017), "A computationally efficient nonparametric approach for changepoint detection", Springer, Journal of Statistics and Computing, vol 27, pp. 1293 - 1305 \
+[4]   K. Haynes, P. Fearnhead, \& I. Eckley (2017), "A computationally efficient nonparametric approach for changepoint detection", Springer, Journal of Statistics and Computing, vol. 27, pp. 1293 - 1305 \
 [5] 	R. Kilick, P. Fearnhead, \& I. A. Eckley (2012), "Optimal Detection of Changepoints With a Linear Computational Cost", Journal of the American Statistical Association, vol. 107, pp. 1590 - 1598 </sub>
