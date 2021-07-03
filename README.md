@@ -1,4 +1,4 @@
-# NPL-BS
+### Non-Parametric Changepoint Detection
 
 This repository stores the code for an algorithm developed for my master's thesis on the topic of offline univariate multiple changepoint detection.
 
