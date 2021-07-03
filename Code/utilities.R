@@ -329,7 +329,6 @@ cp_generator <- function(dist, params)
 
 rate <- function(length, cps){return(floor(length / (cps + 1)))}
 
-
 #Draws with 1 or -1 with equal probability, draws from unif[0.5, 1]
 mean_sample <- function(diff, num_cps)
 {
@@ -349,6 +348,112 @@ mean_sample <- function(diff, num_cps)
   return(final_means)
 }
 
+variance_sample <- function(diff, num_cps)
+{
+  up_down = sample(x = c(1, -1), size = num_cps + 1, replace = TRUE)
+  
+  var_diff = diff * up_down
+  
+  final_var = rep(1, num_cps + 1)
+  
+  for(i in 1 : num_cps)
+  {
+    if(final_var[i] > diff)
+    {
+      final_var[i+1] = final_var[i] + var_diff[i+1]
+    }
+    
+    else{final_var[i+1] = final_var[i] + diff}
+    
+  }
+  
+  return(final_var)
+}
+
+offsetting_mean_variance_sample <- function(mean_diff, var_diff, num_cps)
+{
+  up_down = sample(x = c(1, -1), size = num_cps + 1, replace = TRUE)
+  
+  var_differences = var_diff * up_down
+  mean_differences = -1 * mean_diff * up_down
+  
+  final_var = rep(1, num_cps + 1)
+  final_mean = rep(0, num_cps + 1)
+  
+  for(i in 1 : num_cps)
+  {
+    
+    if(final_var[i] > var_diff)
+    {
+      final_var[i+1] = final_var[i] + var_differences[i+1]
+      final_mean[i+1] = final_mean[i] + mean_differences[i+1]
+    }
+    
+    else
+    {
+      final_var[i+1] = final_var[i] + var_diff
+      final_mean[i+1] = final_mean[i] - mean_diff
+    }
+    
+  }
+  
+  return(list(means = final_mean, variances = final_var))
+}
+
+mean_variance_sample <- function(mean_diff, var_diff, num_cps)
+{
+  
+  change_type = sample(c(1, 2, 3), size = num_cps + 1, replace = TRUE)
+  mean_up_down = sample(c(1, -1), size = num_cps + 1, replace = TRUE)
+  var_up_down = sample(c(1, -1), size = num_cps + 1, replace = TRUE)
+  
+  mean_differences = mean_diff * mean_up_down
+  var_differences = var_diff * var_up_down
+  
+  final_var = rep(1, num_cps + 1)
+  final_means = rep(0, num_cps + 1)
+  
+  for(i in 1 : num_cps)
+  {
+    
+    if(change_type[i+1] == 1)
+    {
+      ##mean only change
+      final_means[i + 1] = final_means[i] + mean_differences[i+1]
+      final_var[i + 1] = final_var[i]
+    }
+    
+    if(change_type[i+1] == 2)
+    {
+      ##var only change
+      final_means[i + 1] = final_means[i] 
+      
+      if(final_var[i] > var_diff)
+      {
+        final_var[i+1] = final_var[i] + var_differences[i+1]
+      }
+      
+      else{final_var[i+1] = final_var[i] + var_diff}
+    }
+    
+    if(change_type[i+1] == 3)
+    {
+      ##mean and var change
+      final_means[i + 1] = final_means[i] + mean_differences[i+1]
+      
+      if(final_var[i] > var_diff)
+      {
+        final_var[i+1] = final_var[i] + var_differences[i+1]
+      }
+      
+      else{final_var[i+1] = final_var[i] + var_diff}
+      
+    }
+    
+  }
+  
+  return(list(means = final_means, variances = final_var))
+}
 
 tensor_index <- function(cp_instance, sim, param, pen)
 {
