@@ -7,6 +7,10 @@ reproducible in the sense that it performed favorably relative to other well-kno
 
 In simulation studies it was found to improve upon the classification power and speed of an earlier algorithm [4] using a different variant of the statistic but with the PELT [5] optimisiation approach.
 
+###### Acknowledgements:
+
+With thanks to my supervisors Dr. Dean Bodenham and Professor Niall Adams for their patience, guidance, and for introducing me to an interesting problem.
+
 ###### References:
 <sub> [1] 	J. Zhang (2002), "Powerful goodness-of-fit tests based on the likelihood ratio", Journal of the Royal Statistical Society, vol. 64, pp. 281 - 294 \
 [2]   J. Einmahl \& I. Mckeague (2003), "Empirical likelihood based hypothesis testing", Bernoulli, vol. 9, pp. 267 - 290 \
