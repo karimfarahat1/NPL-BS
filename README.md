@@ -3,7 +3,7 @@
 This repository stores the code for an algorithm developed for my master's thesis on the topic of offline univariate multiple changepoint detection.
 
 In the early stages of the research phase, the non-parametric likelihood was found to be a powerful two-sample goodness of fit test. The results of the papers [1]-[2] were found to be 
-reproducible in the sense that it performed favorably relative to other well-known non-parametric statistics such as the Cramer-von-Mises and Anderson-Darling. This was extended to a changepoint detection algorithm using Binary Segmentation [3], with properties of the likelihood and empirical distribution function being manipulated to improve its efficiency. 
+reproducible in the sense that it performed favorably relative to other well-known non-parametric cost functions such as the Cramer-von-Mises and Anderson-Darling statistics. This was extended to a changepoint detection algorithm using Binary Segmentation [3], with properties of the likelihood and empirical distribution function being manipulated to improve its efficiency. 
 
 In simulation studies it was found to improve upon the classification power and speed of an earlier algorithm [4] using a different variant of the statistic but with the PELT [5] optimisiation approach.
 
