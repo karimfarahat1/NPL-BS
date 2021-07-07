@@ -23,7 +23,7 @@ penalty = 0.5 * log(200) #BIC penalty
 NPL_BS(experiment_data, penalty)
 
 ```
-A simple comparison to other methods would illustrate the methods upside. Typically, it precisely identifies the change where existing approaches instead return only false positives.
+A simple comparison to the state of the art would illustrate the upside of the approach. Typically, it precisely identifies the change where existing approaches instead return only false positives.
 
 ```
 
@@ -37,11 +37,11 @@ cpt.mean(example_data, method = "PELT", class = FALSE)
 
 #ED-PELT - despite being non-parametric it is also unsatisfactory
 library(changepoint.np)
-print(cpt.np(example_data, nquantiles = 4 * log(200), class = FALSE))
+cpt.np(example_data, nquantiles = 4 * log(200), class = FALSE)
 
 ```
 
-While less interest was taken in its development throughout the course of the project, code used to create simulation studies contained within the broader thesis can also be found in the utilities.R file for the purposes of reproducibility. 
+For the purposes of reproducibility, the code used to create the simulation studies contained within the broader thesis can also be found in the utilities.R file.
 
 ###### References:
 <sub> [1] D. Eddelbuettel \& R. Francois (2011), “Rcpp: Seamless R and C++ Integration”, Journal of Statistical Software, vol. 40, pp. 1 - 18 </sub>
