@@ -23,7 +23,7 @@ penalty = 0.5 * log(200) #BIC penalty
 NPL_BS(experiment_data, penalty)
 
 ```
-A simple comparison to other methods would illustrates the methods upside. Typically, it precisely identifies the change where existing approaches instead return only false positives.
+A simple comparison to other methods would illustrate the methods upside. Typically, it precisely identifies the change where existing approaches instead return only false positives.
 
 ```
 
