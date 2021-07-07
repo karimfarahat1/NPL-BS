@@ -7,6 +7,8 @@ reproducible in the sense that it performed favorably relative to other well-kno
 
 In simulation studies it was found to improve upon the classification power and speed of an earlier algorithm [4] using a different variant of the statistic but with the PELT [5] optimisiation approach.
 
+The algorithm's implementation and a simple working example of its use can be found in the Code subfolder. An explanation of its construction and a broad set of simulation studies can be found within Chapters 5, 6, and 7 of the document contained within the Thesis subfolder.
+
 ###### Acknowledgements:
 
 With thanks to my supervisors Dr. Dean Bodenham and Professor Niall Adams for their patience, guidance, and for introducing me to an interesting problem.
