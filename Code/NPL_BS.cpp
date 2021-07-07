@@ -44,7 +44,7 @@ std::set<int> changepoint_scan(const std::vector<double> &time_sorted_segment,
   std::map<double, int>::iterator map_iter;
   
   ///Main loop to find the changepoint candidate
-  for(iter; iter != time_sorted_segment.end()-2; ++iter)
+  for(; iter != time_sorted_segment.end()-2; ++iter)
   {
     ++current_cp_index;
     --alternate_seg_length;
@@ -59,7 +59,7 @@ std::set<int> changepoint_scan(const std::vector<double> &time_sorted_segment,
 ///Computing cost associated with the left tree
     
   //Ranks of points unchanged - likelihood update required due to segment length
-    for(map_iter; map_iter != left_map_iter; ++map_iter)
+    for(; map_iter != left_map_iter; ++map_iter)
     {
       //Rank of point within own segment
       ++left_rank_iter;
@@ -89,7 +89,7 @@ std::set<int> changepoint_scan(const std::vector<double> &time_sorted_segment,
     
   //Ranks of points updated by 1 - likelihood update required due to this 
     //While loop ensures that ranks do not exceed the number of points within the alternate segment
-    while(alternate_seg_length - alternate_seg_rank > 0 & left_map_iter != map_iter)
+    while((alternate_seg_length - alternate_seg_rank > 0) & (left_map_iter != map_iter))
     {
       //Partial cost associated with point
       current_cp_cost -= log_diff_lookup[alternate_seg_rank];
@@ -111,7 +111,7 @@ std::set<int> changepoint_scan(const std::vector<double> &time_sorted_segment,
 ///Computing cost associated with the right tree
   
   //Ranks of points unchanged - likelihood update required due to segment length
-    for(map_iter; map_iter != right_map_iter; ++map_iter)
+    for(; map_iter != right_map_iter; ++map_iter)
     {
       //Rank of point within own segment
       ++right_rank_iter;
@@ -130,7 +130,7 @@ std::set<int> changepoint_scan(const std::vector<double> &time_sorted_segment,
     
   //Ranks of points updated by 1 - likelihood update required due to this 
     //While loop ensures that ranks do not exceed the number of points within the alternate segment
-    while(current_cp_index - alternate_seg_rank > 0 & right_map_iter != map_iter)
+    while((current_cp_index - alternate_seg_rank > 0) & (right_map_iter != map_iter))
     {
       //Partial cost associated with point
       current_cp_cost += log_diff_lookup[alternate_seg_rank - 1];
