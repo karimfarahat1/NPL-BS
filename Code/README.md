@@ -20,7 +20,7 @@ example_data = c(rep(0, 100), rep(1, 100)) + rt(200,1)
 penalty = 0.5 * log(200) #BIC penalty
 
 #Calling NPL BS
-NPL_BS(experiment_data, penalty)
+NPL_BS(example_data, penalty)
 
 ```
 A simple comparison to the state of the art would illustrate the upside of the approach. Typically, it precisely identifies the change where existing approaches instead return only false positives.
